@@ -1,4 +1,5 @@
 // First part
+// test comment
 
 function convertFile(file) {
     const lines = file.split("\n");

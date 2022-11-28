@@ -1,5 +1,5 @@
 // First part
-/*
+
 function convertFile(file) {
     const lines = file.split("\n");
     const pizza_eaten = [];
@@ -101,7 +101,7 @@ function returnIngredients(file) {
   }
 
 
-
+/*
   {[],[],[]}
 
   for (array of object) {
@@ -122,4 +122,4 @@ function returnIngredients(file) {
     return new *52;
 
   }
-/*/*//**//*/*//*/ */ 
+*/ 

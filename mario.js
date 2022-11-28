@@ -1,25 +1,26 @@
 // First part
+// test comment
 
 function convertFile(file) {
-    const lines = file.split("\n");
-    const pizza_eaten = [];
-  
-    for (let line of lines) {
-      console.log("line =>", line);
-      const data = line.split(",");
-  
-      const clear_data = {};
-      
-      clear_data.name = data[0];
-      clear_data.pizza = data[1];
-      clear_data.quantity = data[2];
-  
-      pizza_eaten.push(clear_data);
-    }
-    return pizza_eaten;
+  const lines = file.split("\n");
+  const pizza_eaten = [];
+
+  for (let line of lines) {
+    console.log("line =>", line);
+    const data = line.split(",");
+
+    const clear_data = {};
+
+    clear_data.name = data[0];
+    clear_data.pizza = data[1];
+    clear_data.quantity = data[2];
+
+    pizza_eaten.push(clear_data);
   }
-  
-  const file = `john, margherita, 3 
+  return pizza_eaten;
+}
+
+const file = `john, margherita, 3 
   john,marinara,3
   jimmy,margherita,1
   alice,marinara,2
@@ -28,15 +29,15 @@ function convertFile(file) {
   tom,margherita,3
   daniel,marinara,1
   `;
-  
-  const file_converted = convertFile(file);
-  console.log(file_converted); */
 
-  // Part 2 
+const file_converted = convertFile(file);
+console.log(file_converted); * /
+
+// Part 2 
 
 
-  /*
-  HINTS:
+/*
+HINTS:
 - choose a data structure to represent the pizza_ingredients
 - choose a data structure to represent the pizza_eaten
 - create a function to convert the pizza_eaten_file (the string that mario gives you) to pizza_eaten (our data structure)
@@ -48,57 +49,57 @@ function convertFile(file) {
 // We need to make a representation of pizza ingredients :
 
 function returnIngredients(file) {
-    const wheat = 0;
-    const tomatoes = 0;
-    const cheese = 0;
-    const pizza = [];
-  
-    file.forEach((object) => {
-      for (let key in object) {
-        if (key === "pizza") pizza.push(object[key]);
-      }
-    });
-    
-    for (const type of pizza) {
-      if (type === 'bianca') {
-      wheat = wheat + 150;
-      }
-      else if (type === 'marinara'){
-      wheat = wheat + 100;
-      tomatoes = tomatoes + 100 ;
-        else {
-      wheat = wheat + 120;
-      tomatoes = tomatoes + 80 ;
-      cheese = cheese + 80;
-  
-        }
-      }
+  const wheat = 0;
+  const tomatoes = 0;
+  const cheese = 0;
+  const pizza = [];
+
+  file.forEach((object) => {
+    for (let key in object) {
+      if (key === "pizza") pizza.push(object[key]);
     }
-  }
+  });
 
-
-  function pizzaIngredients(pizza) {
-    let wheat = 0;
-    let tomatoes = 0;
-    let cheese = 0;
-    if (pizza === "bianca") {
+  for (const type of pizza) {
+    if (type === 'bianca') {
       wheat = wheat + 150;
-    } else if (pizza === "marinara") {
+    }
+    else if (type === 'marinara') {
       wheat = wheat + 100;
       tomatoes = tomatoes + 100;
-    } else {
-      wheat = wheat + 120;
-      tomatoes = tomatoes + 80;
-      cheese = cheese + 80;
+        else {
+        wheat = wheat + 120;
+        tomatoes = tomatoes + 80;
+        cheese = cheese + 80;
+
+      }
     }
-  
-    const Ingredients = {};
-    Ingredients.wheat = wheat;
-    Ingredients.tomatoes = tomatoes;
-    Ingredients.cheese = cheese;
-  
-    return Ingredients;
   }
+}
+
+
+function pizzaIngredients(pizza) {
+  let wheat = 0;
+  let tomatoes = 0;
+  let cheese = 0;
+  if (pizza === "bianca") {
+    wheat = wheat + 150;
+  } else if (pizza === "marinara") {
+    wheat = wheat + 100;
+    tomatoes = tomatoes + 100;
+  } else {
+    wheat = wheat + 120;
+    tomatoes = tomatoes + 80;
+    cheese = cheese + 80;
+  }
+
+  const Ingredients = {};
+  Ingredients.wheat = wheat;
+  Ingredients.tomatoes = tomatoes;
+  Ingredients.cheese = cheese;
+
+  return Ingredients;
+}
 
 
 /*
